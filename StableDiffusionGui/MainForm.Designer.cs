@@ -85,6 +85,7 @@
             this.paypalBtn = new System.Windows.Forms.Button();
             this.btnEmbeddingBrowse = new HTAlt.WinForms.HTButton();
             this.btnInitImgBrowse = new HTAlt.WinForms.HTButton();
+            this.QuickPromptAdd_Text = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -107,6 +108,11 @@
             this.labelPromptInfo = new System.Windows.Forms.Label();
             this.separator = new System.Windows.Forms.Button();
             this.menuStripLogs = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.AddToLst_Btn = new HTAlt.WinForms.HTButton();
+            this.RemoveFromLst_Btn = new HTAlt.WinForms.HTButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.upDownIterations)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -125,6 +131,7 @@
             this.panelInitImgStrength.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panelPrompt.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // runBtn
@@ -134,9 +141,9 @@
             this.runBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.runBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.runBtn.ForeColor = System.Drawing.Color.White;
-            this.runBtn.Location = new System.Drawing.Point(663, 598);
+            this.runBtn.Location = new System.Drawing.Point(918, 599);
             this.runBtn.Name = "runBtn";
-            this.runBtn.Size = new System.Drawing.Size(150, 40);
+            this.runBtn.Size = new System.Drawing.Size(160, 40);
             this.runBtn.TabIndex = 100;
             this.runBtn.Text = "Generate!";
             this.runBtn.UseVisualStyleBackColor = false;
@@ -147,7 +154,7 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Yu Gothic UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(11, 9);
+            this.titleLabel.Location = new System.Drawing.Point(7, 9);
             this.titleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(367, 40);
@@ -159,11 +166,11 @@
             this.logBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.logBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.logBox.ForeColor = System.Drawing.Color.Silver;
-            this.logBox.Location = new System.Drawing.Point(12, 579);
+            this.logBox.Location = new System.Drawing.Point(267, 579);
             this.logBox.Multiline = true;
             this.logBox.Name = "logBox";
             this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logBox.Size = new System.Drawing.Size(633, 83);
+            this.logBox.Size = new System.Drawing.Size(643, 83);
             this.logBox.TabIndex = 78;
             this.logBox.TabStop = false;
             // 
@@ -174,10 +181,10 @@
             this.imgBoxOutput.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.imgBoxOutput.GridColorAlternate = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.imgBoxOutput.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-            this.imgBoxOutput.Location = new System.Drawing.Point(658, 62);
+            this.imgBoxOutput.Location = new System.Drawing.Point(913, 62);
             this.imgBoxOutput.Margin = new System.Windows.Forms.Padding(10);
             this.imgBoxOutput.Name = "imgBoxOutput";
-            this.imgBoxOutput.Size = new System.Drawing.Size(514, 514);
+            this.imgBoxOutput.Size = new System.Drawing.Size(524, 514);
             this.imgBoxOutput.TabIndex = 79;
             this.imgBoxOutput.TabStop = false;
             this.imgBoxOutput.Text = "The generated images will be shown here.";
@@ -187,7 +194,7 @@
             // 
             this.outputImgLabel.AutoSize = true;
             this.outputImgLabel.ForeColor = System.Drawing.Color.Silver;
-            this.outputImgLabel.Location = new System.Drawing.Point(660, 579);
+            this.outputImgLabel.Location = new System.Drawing.Point(915, 579);
             this.outputImgLabel.Name = "outputImgLabel";
             this.outputImgLabel.Size = new System.Drawing.Size(133, 13);
             this.outputImgLabel.TabIndex = 81;
@@ -271,7 +278,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 21);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 21);
             this.tableLayoutPanel6.TabIndex = 88;
             // 
             // sliderSteps
@@ -288,7 +295,7 @@
             this.sliderSteps.Minimum = 1;
             this.sliderSteps.Name = "sliderSteps";
             this.sliderSteps.OverlayColor = System.Drawing.Color.White;
-            this.sliderSteps.Size = new System.Drawing.Size(355, 21);
+            this.sliderSteps.Size = new System.Drawing.Size(365, 21);
             this.sliderSteps.SmallChange = ((uint)(1u));
             this.sliderSteps.TabIndex = 4;
             this.sliderSteps.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -304,9 +311,9 @@
             this.iterLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.iterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iterLabel.ForeColor = System.Drawing.Color.Silver;
-            this.iterLabel.Location = new System.Drawing.Point(362, 0);
+            this.iterLabel.Location = new System.Drawing.Point(371, 0);
             this.iterLabel.Name = "iterLabel";
-            this.iterLabel.Size = new System.Drawing.Size(35, 21);
+            this.iterLabel.Size = new System.Drawing.Size(36, 21);
             this.iterLabel.TabIndex = 5;
             this.iterLabel.Text = "1000";
             this.iterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,7 +357,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(291, 21);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 21);
             this.tableLayoutPanel1.TabIndex = 91;
             // 
             // sliderScale
@@ -366,7 +373,7 @@
             this.sliderScale.Maximum = 40;
             this.sliderScale.Name = "sliderScale";
             this.sliderScale.OverlayColor = System.Drawing.Color.White;
-            this.sliderScale.Size = new System.Drawing.Size(246, 21);
+            this.sliderScale.Size = new System.Drawing.Size(256, 21);
             this.sliderScale.SmallChange = ((uint)(1u));
             this.sliderScale.TabIndex = 4;
             this.sliderScale.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -382,9 +389,9 @@
             this.scaleLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.scaleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scaleLabel.ForeColor = System.Drawing.Color.Silver;
-            this.scaleLabel.Location = new System.Drawing.Point(253, 0);
+            this.scaleLabel.Location = new System.Drawing.Point(262, 0);
             this.scaleLabel.Name = "scaleLabel";
-            this.scaleLabel.Size = new System.Drawing.Size(35, 21);
+            this.scaleLabel.Size = new System.Drawing.Size(36, 21);
             this.scaleLabel.TabIndex = 5;
             this.scaleLabel.Text = "1000";
             this.scaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -454,7 +461,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(190, 21);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 21);
             this.tableLayoutPanel2.TabIndex = 96;
             // 
             // sliderResW
@@ -471,7 +478,7 @@
             this.sliderResW.Minimum = 4;
             this.sliderResW.Name = "sliderResW";
             this.sliderResW.OverlayColor = System.Drawing.Color.White;
-            this.sliderResW.Size = new System.Drawing.Size(145, 21);
+            this.sliderResW.Size = new System.Drawing.Size(155, 21);
             this.sliderResW.SmallChange = ((uint)(1u));
             this.sliderResW.TabIndex = 4;
             this.sliderResW.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -485,9 +492,9 @@
             this.labelResW.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelResW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResW.ForeColor = System.Drawing.Color.Silver;
-            this.labelResW.Location = new System.Drawing.Point(152, 0);
+            this.labelResW.Location = new System.Drawing.Point(161, 0);
             this.labelResW.Name = "labelResW";
-            this.labelResW.Size = new System.Drawing.Size(35, 21);
+            this.labelResW.Size = new System.Drawing.Size(36, 21);
             this.labelResW.TabIndex = 5;
             this.labelResW.Text = "1000";
             this.labelResW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -507,7 +514,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(190, 21);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 21);
             this.tableLayoutPanel3.TabIndex = 97;
             // 
             // sliderResH
@@ -524,7 +531,7 @@
             this.sliderResH.Minimum = 4;
             this.sliderResH.Name = "sliderResH";
             this.sliderResH.OverlayColor = System.Drawing.Color.White;
-            this.sliderResH.Size = new System.Drawing.Size(145, 21);
+            this.sliderResH.Size = new System.Drawing.Size(155, 21);
             this.sliderResH.SmallChange = ((uint)(1u));
             this.sliderResH.TabIndex = 4;
             this.sliderResH.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -538,9 +545,9 @@
             this.labelResH.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelResH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResH.ForeColor = System.Drawing.Color.Silver;
-            this.labelResH.Location = new System.Drawing.Point(152, 0);
+            this.labelResH.Location = new System.Drawing.Point(161, 0);
             this.labelResH.Name = "labelResH";
-            this.labelResH.Size = new System.Drawing.Size(35, 21);
+            this.labelResH.Size = new System.Drawing.Size(36, 21);
             this.labelResH.TabIndex = 5;
             this.labelResH.Text = "1000";
             this.labelResH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -567,7 +574,7 @@
             this.progressCircle.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.progressCircle.InnerMargin = 2;
             this.progressCircle.InnerWidth = -1;
-            this.progressCircle.Location = new System.Drawing.Point(384, 9);
+            this.progressCircle.Location = new System.Drawing.Point(380, 9);
             this.progressCircle.MarqueeAnimationSpeed = 2000;
             this.progressCircle.Name = "progressCircle";
             this.progressCircle.OuterColor = System.Drawing.Color.Gray;
@@ -576,7 +583,7 @@
             this.progressCircle.ProgressColor = System.Drawing.Color.LimeGreen;
             this.progressCircle.ProgressWidth = 8;
             this.progressCircle.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.progressCircle.Size = new System.Drawing.Size(40, 40);
+            this.progressCircle.Size = new System.Drawing.Size(50, 40);
             this.progressCircle.StartAngle = 270;
             this.progressCircle.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressCircle.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -594,9 +601,9 @@
             // 
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.progressBar.BorderThickness = 0;
-            this.progressBar.Location = new System.Drawing.Point(663, 647);
+            this.progressBar.Location = new System.Drawing.Point(918, 647);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(509, 15);
+            this.progressBar.Size = new System.Drawing.Size(519, 15);
             this.progressBar.TabIndex = 100;
             this.progressBar.TabStop = false;
             // 
@@ -694,7 +701,7 @@
             this.sliderInitStrength.Minimum = 2;
             this.sliderInitStrength.Name = "sliderInitStrength";
             this.sliderInitStrength.OverlayColor = System.Drawing.Color.White;
-            this.sliderInitStrength.Size = new System.Drawing.Size(246, 21);
+            this.sliderInitStrength.Size = new System.Drawing.Size(256, 21);
             this.sliderInitStrength.SmallChange = ((uint)(1u));
             this.sliderInitStrength.TabIndex = 4;
             this.sliderInitStrength.ThumbRoundRectSize = new System.Drawing.Size(16, 16);
@@ -735,9 +742,9 @@
             this.btnPostProc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostProc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnPostProc.Location = new System.Drawing.Point(948, 9);
+            this.btnPostProc.Location = new System.Drawing.Point(1203, 9);
             this.btnPostProc.Name = "btnPostProc";
-            this.btnPostProc.Size = new System.Drawing.Size(40, 40);
+            this.btnPostProc.Size = new System.Drawing.Size(50, 40);
             this.btnPostProc.TabIndex = 109;
             this.btnPostProc.TabStop = false;
             this.toolTip.SetToolTip(this.btnPostProc, "Post Processing Settings");
@@ -752,9 +759,9 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnSettings.Location = new System.Drawing.Point(1132, 9);
+            this.btnSettings.Location = new System.Drawing.Point(1387, 9);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(40, 40);
+            this.btnSettings.Size = new System.Drawing.Size(50, 40);
             this.btnSettings.TabIndex = 108;
             this.btnSettings.TabStop = false;
             this.toolTip.SetToolTip(this.btnSettings, "Open Settings");
@@ -769,9 +776,9 @@
             this.btnDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnDebug.Location = new System.Drawing.Point(1086, 9);
+            this.btnDebug.Location = new System.Drawing.Point(1341, 9);
             this.btnDebug.Name = "btnDebug";
-            this.btnDebug.Size = new System.Drawing.Size(40, 40);
+            this.btnDebug.Size = new System.Drawing.Size(50, 40);
             this.btnDebug.TabIndex = 107;
             this.btnDebug.TabStop = false;
             this.toolTip.SetToolTip(this.btnDebug, "Logs...");
@@ -786,9 +793,9 @@
             this.cliButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cliButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cliButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cliButton.Location = new System.Drawing.Point(994, 9);
+            this.cliButton.Location = new System.Drawing.Point(1249, 9);
             this.cliButton.Name = "cliButton";
-            this.cliButton.Size = new System.Drawing.Size(40, 40);
+            this.cliButton.Size = new System.Drawing.Size(50, 40);
             this.cliButton.TabIndex = 103;
             this.cliButton.TabStop = false;
             this.toolTip.SetToolTip(this.cliButton, "Open Dream.py Command Line Interface");
@@ -803,10 +810,10 @@
             this.btnImgShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImgShare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnImgShare.Location = new System.Drawing.Point(1040, 598);
+            this.btnImgShare.Location = new System.Drawing.Point(1295, 598);
             this.btnImgShare.Margin = new System.Windows.Forms.Padding(6);
             this.btnImgShare.Name = "btnImgShare";
-            this.btnImgShare.Size = new System.Drawing.Size(40, 40);
+            this.btnImgShare.Size = new System.Drawing.Size(50, 40);
             this.btnImgShare.TabIndex = 102;
             this.btnImgShare.TabStop = false;
             this.toolTip.SetToolTip(this.btnImgShare, "Share or export image");
@@ -821,9 +828,9 @@
             this.btnOpenOutFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenOutFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenOutFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnOpenOutFolder.Location = new System.Drawing.Point(994, 598);
+            this.btnOpenOutFolder.Location = new System.Drawing.Point(1249, 598);
             this.btnOpenOutFolder.Name = "btnOpenOutFolder";
-            this.btnOpenOutFolder.Size = new System.Drawing.Size(40, 40);
+            this.btnOpenOutFolder.Size = new System.Drawing.Size(50, 40);
             this.btnOpenOutFolder.TabIndex = 94;
             this.btnOpenOutFolder.TabStop = false;
             this.toolTip.SetToolTip(this.btnOpenOutFolder, "Open output folder");
@@ -838,9 +845,9 @@
             this.btnPrevImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnPrevImg.Location = new System.Drawing.Point(1086, 598);
+            this.btnPrevImg.Location = new System.Drawing.Point(1341, 598);
             this.btnPrevImg.Name = "btnPrevImg";
-            this.btnPrevImg.Size = new System.Drawing.Size(40, 40);
+            this.btnPrevImg.Size = new System.Drawing.Size(50, 40);
             this.btnPrevImg.TabIndex = 82;
             this.btnPrevImg.TabStop = false;
             this.toolTip.SetToolTip(this.btnPrevImg, "Previous image");
@@ -855,9 +862,9 @@
             this.btnNextImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnNextImg.Location = new System.Drawing.Point(1132, 598);
+            this.btnNextImg.Location = new System.Drawing.Point(1387, 598);
             this.btnNextImg.Name = "btnNextImg";
-            this.btnNextImg.Size = new System.Drawing.Size(40, 40);
+            this.btnNextImg.Size = new System.Drawing.Size(50, 40);
             this.btnNextImg.TabIndex = 80;
             this.btnNextImg.TabStop = false;
             this.toolTip.SetToolTip(this.btnNextImg, "Next image");
@@ -872,9 +879,9 @@
             this.installerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.installerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.installerBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.installerBtn.Location = new System.Drawing.Point(1040, 9);
+            this.installerBtn.Location = new System.Drawing.Point(1295, 9);
             this.installerBtn.Name = "installerBtn";
-            this.installerBtn.Size = new System.Drawing.Size(40, 40);
+            this.installerBtn.Size = new System.Drawing.Size(50, 40);
             this.installerBtn.TabIndex = 76;
             this.installerBtn.TabStop = false;
             this.toolTip.SetToolTip(this.installerBtn, "Open Installer");
@@ -890,9 +897,9 @@
             this.discordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.discordBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discordBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.discordBtn.Location = new System.Drawing.Point(856, 9);
+            this.discordBtn.Location = new System.Drawing.Point(1111, 9);
             this.discordBtn.Name = "discordBtn";
-            this.discordBtn.Size = new System.Drawing.Size(40, 40);
+            this.discordBtn.Size = new System.Drawing.Size(50, 40);
             this.discordBtn.TabIndex = 74;
             this.discordBtn.TabStop = false;
             this.toolTip.SetToolTip(this.discordBtn, "Chat on Discord");
@@ -908,9 +915,9 @@
             this.patreonBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patreonBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patreonBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.patreonBtn.Location = new System.Drawing.Point(810, 9);
+            this.patreonBtn.Location = new System.Drawing.Point(1065, 9);
             this.patreonBtn.Name = "patreonBtn";
-            this.patreonBtn.Size = new System.Drawing.Size(40, 40);
+            this.patreonBtn.Size = new System.Drawing.Size(50, 40);
             this.patreonBtn.TabIndex = 73;
             this.patreonBtn.TabStop = false;
             this.toolTip.SetToolTip(this.patreonBtn, "Support me on Patreon");
@@ -926,9 +933,9 @@
             this.paypalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.paypalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paypalBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.paypalBtn.Location = new System.Drawing.Point(764, 9);
+            this.paypalBtn.Location = new System.Drawing.Point(1019, 9);
             this.paypalBtn.Name = "paypalBtn";
-            this.paypalBtn.Size = new System.Drawing.Size(40, 40);
+            this.paypalBtn.Size = new System.Drawing.Size(50, 40);
             this.paypalBtn.TabIndex = 72;
             this.paypalBtn.TabStop = false;
             this.toolTip.SetToolTip(this.paypalBtn, "Donate one-time via PayPal");
@@ -977,6 +984,19 @@
             this.toolTip.SetToolTip(this.btnInitImgBrowse, "Load initialization image");
             this.btnInitImgBrowse.Click += new System.EventHandler(this.btnInitImgBrowse_Click);
             // 
+            // QuickPromptAdd_Text
+            // 
+            this.QuickPromptAdd_Text.AllowDrop = true;
+            this.QuickPromptAdd_Text.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.QuickPromptAdd_Text.ForeColor = System.Drawing.Color.White;
+            this.QuickPromptAdd_Text.Location = new System.Drawing.Point(0, 534);
+            this.QuickPromptAdd_Text.MinimumSize = new System.Drawing.Size(4, 21);
+            this.QuickPromptAdd_Text.Multiline = true;
+            this.QuickPromptAdd_Text.Name = "QuickPromptAdd_Text";
+            this.QuickPromptAdd_Text.Size = new System.Drawing.Size(255, 63);
+            this.QuickPromptAdd_Text.TabIndex = 86;
+            this.toolTip.SetToolTip(this.QuickPromptAdd_Text, "Text prompt. The AI will try to generate an image matching this description.");
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1002,9 +1022,9 @@
             this.panel1.Controls.Add(this.panelIterations);
             this.panel1.Controls.Add(this.panelInitImgStrength);
             this.panel1.Controls.Add(this.panelPrompt);
-            this.panel1.Location = new System.Drawing.Point(12, 62);
+            this.panel1.Location = new System.Drawing.Point(267, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 514);
+            this.panel1.Size = new System.Drawing.Size(643, 514);
             this.panel1.TabIndex = 106;
             // 
             // panel12
@@ -1012,7 +1032,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 380);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(633, 35);
+            this.panel12.Size = new System.Drawing.Size(643, 35);
             this.panel12.TabIndex = 11;
             // 
             // panel11
@@ -1020,7 +1040,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 345);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(633, 35);
+            this.panel11.Size = new System.Drawing.Size(643, 35);
             this.panel11.TabIndex = 10;
             // 
             // panelSeamless
@@ -1030,7 +1050,7 @@
             this.panelSeamless.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSeamless.Location = new System.Drawing.Point(0, 310);
             this.panelSeamless.Name = "panelSeamless";
-            this.panelSeamless.Size = new System.Drawing.Size(633, 35);
+            this.panelSeamless.Size = new System.Drawing.Size(643, 35);
             this.panelSeamless.TabIndex = 9;
             // 
             // label8
@@ -1052,7 +1072,7 @@
             this.panelSampler.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSampler.Location = new System.Drawing.Point(0, 275);
             this.panelSampler.Name = "panelSampler";
-            this.panelSampler.Size = new System.Drawing.Size(633, 35);
+            this.panelSampler.Size = new System.Drawing.Size(643, 35);
             this.panelSampler.TabIndex = 6;
             // 
             // panelRes
@@ -1064,7 +1084,7 @@
             this.panelRes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRes.Location = new System.Drawing.Point(0, 240);
             this.panelRes.Name = "panelRes";
-            this.panelRes.Size = new System.Drawing.Size(633, 35);
+            this.panelRes.Size = new System.Drawing.Size(643, 35);
             this.panelRes.TabIndex = 5;
             // 
             // panelSeed
@@ -1076,7 +1096,7 @@
             this.panelSeed.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSeed.Location = new System.Drawing.Point(0, 205);
             this.panelSeed.Name = "panelSeed";
-            this.panelSeed.Size = new System.Drawing.Size(633, 35);
+            this.panelSeed.Size = new System.Drawing.Size(643, 35);
             this.panelSeed.TabIndex = 4;
             // 
             // btnSeedResetToRandom
@@ -1127,7 +1147,7 @@
             this.panelScale.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelScale.Location = new System.Drawing.Point(0, 170);
             this.panelScale.Name = "panelScale";
-            this.panelScale.Size = new System.Drawing.Size(633, 35);
+            this.panelScale.Size = new System.Drawing.Size(643, 35);
             this.panelScale.TabIndex = 3;
             // 
             // panelSteps
@@ -1137,7 +1157,7 @@
             this.panelSteps.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSteps.Location = new System.Drawing.Point(0, 135);
             this.panelSteps.Name = "panelSteps";
-            this.panelSteps.Size = new System.Drawing.Size(633, 35);
+            this.panelSteps.Size = new System.Drawing.Size(643, 35);
             this.panelSteps.TabIndex = 2;
             // 
             // panelIterations
@@ -1147,7 +1167,7 @@
             this.panelIterations.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelIterations.Location = new System.Drawing.Point(0, 100);
             this.panelIterations.Name = "panelIterations";
-            this.panelIterations.Size = new System.Drawing.Size(633, 35);
+            this.panelIterations.Size = new System.Drawing.Size(643, 35);
             this.panelIterations.TabIndex = 1;
             // 
             // panelInitImgStrength
@@ -1158,7 +1178,7 @@
             this.panelInitImgStrength.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInitImgStrength.Location = new System.Drawing.Point(0, 65);
             this.panelInitImgStrength.Name = "panelInitImgStrength";
-            this.panelInitImgStrength.Size = new System.Drawing.Size(633, 35);
+            this.panelInitImgStrength.Size = new System.Drawing.Size(643, 35);
             this.panelInitImgStrength.TabIndex = 8;
             this.panelInitImgStrength.Visible = false;
             // 
@@ -1189,7 +1209,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(291, 21);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(301, 21);
             this.tableLayoutPanel4.TabIndex = 89;
             // 
             // labelInitStrength
@@ -1198,9 +1218,9 @@
             this.labelInitStrength.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelInitStrength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInitStrength.ForeColor = System.Drawing.Color.Silver;
-            this.labelInitStrength.Location = new System.Drawing.Point(253, 0);
+            this.labelInitStrength.Location = new System.Drawing.Point(262, 0);
             this.labelInitStrength.Name = "labelInitStrength";
-            this.labelInitStrength.Size = new System.Drawing.Size(35, 21);
+            this.labelInitStrength.Size = new System.Drawing.Size(36, 21);
             this.labelInitStrength.TabIndex = 5;
             this.labelInitStrength.Text = "1000";
             this.labelInitStrength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1216,7 +1236,7 @@
             this.panelPrompt.Location = new System.Drawing.Point(0, 0);
             this.panelPrompt.Margin = new System.Windows.Forms.Padding(0);
             this.panelPrompt.Name = "panelPrompt";
-            this.panelPrompt.Size = new System.Drawing.Size(633, 65);
+            this.panelPrompt.Size = new System.Drawing.Size(643, 65);
             this.panelPrompt.TabIndex = 0;
             // 
             // labelPromptInfo
@@ -1239,9 +1259,9 @@
             this.separator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.separator.Location = new System.Drawing.Point(902, 9);
+            this.separator.Location = new System.Drawing.Point(1157, 9);
             this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(40, 40);
+            this.separator.Size = new System.Drawing.Size(50, 40);
             this.separator.TabIndex = 75;
             this.separator.TabStop = false;
             this.separator.UseVisualStyleBackColor = false;
@@ -1251,13 +1271,91 @@
             this.menuStripLogs.Name = "menuStripLogs";
             this.menuStripLogs.Size = new System.Drawing.Size(61, 4);
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.listBox1.ForeColor = System.Drawing.Color.White;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 35);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(258, 446);
+            this.listBox1.TabIndex = 110;
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+            // 
+            // AddToLst_Btn
+            // 
+            this.AddToLst_Btn.AutoColor = true;
+            this.AddToLst_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.AddToLst_Btn.ButtonImage = null;
+            this.AddToLst_Btn.ButtonShape = HTAlt.WinForms.HTButton.ButtonShapes.Rectangle;
+            this.AddToLst_Btn.ClickColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.AddToLst_Btn.DrawImage = false;
+            this.AddToLst_Btn.ForeColor = System.Drawing.Color.White;
+            this.AddToLst_Btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.AddToLst_Btn.ImageSizeMode = HTAlt.WinForms.HTButton.ButtonImageSizeMode.None;
+            this.AddToLst_Btn.Location = new System.Drawing.Point(2, 496);
+            this.AddToLst_Btn.Name = "AddToLst_Btn";
+            this.AddToLst_Btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.AddToLst_Btn.Size = new System.Drawing.Size(50, 32);
+            this.AddToLst_Btn.TabIndex = 86;
+            this.AddToLst_Btn.TabStop = false;
+            this.AddToLst_Btn.Text = "Add";
+            this.toolTip.SetToolTip(this.AddToLst_Btn, "Load initialization image");
+            this.AddToLst_Btn.Click += new System.EventHandler(this.AddToLst_Btn_Click);
+            // 
+            // RemoveFromLst_Btn
+            // 
+            this.RemoveFromLst_Btn.AutoColor = true;
+            this.RemoveFromLst_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.RemoveFromLst_Btn.ButtonImage = null;
+            this.RemoveFromLst_Btn.ButtonShape = HTAlt.WinForms.HTButton.ButtonShapes.Rectangle;
+            this.RemoveFromLst_Btn.ClickColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.RemoveFromLst_Btn.DrawImage = false;
+            this.RemoveFromLst_Btn.ForeColor = System.Drawing.Color.White;
+            this.RemoveFromLst_Btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.RemoveFromLst_Btn.ImageSizeMode = HTAlt.WinForms.HTButton.ButtonImageSizeMode.None;
+            this.RemoveFromLst_Btn.Location = new System.Drawing.Point(58, 496);
+            this.RemoveFromLst_Btn.Name = "RemoveFromLst_Btn";
+            this.RemoveFromLst_Btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.RemoveFromLst_Btn.Size = new System.Drawing.Size(50, 32);
+            this.RemoveFromLst_Btn.TabIndex = 111;
+            this.RemoveFromLst_Btn.TabStop = false;
+            this.RemoveFromLst_Btn.Text = "Remove";
+            this.toolTip.SetToolTip(this.RemoveFromLst_Btn, "Load initialization image");
+            this.RemoveFromLst_Btn.Click += new System.EventHandler(this.RemoveFromLst_Btn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 11);
+            this.label10.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 13);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "Prompt Quick Commands";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.QuickPromptAdd_Text);
+            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.AddToLst_Btn);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.RemoveFromLst_Btn);
+            this.panel2.Location = new System.Drawing.Point(6, 62);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(258, 600);
+            this.panel2.TabIndex = 112;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1184, 671);
+            this.ClientSize = new System.Drawing.Size(1448, 671);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnPostProc);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnDebug);
@@ -1322,6 +1420,8 @@
             this.tableLayoutPanel4.PerformLayout();
             this.panelPrompt.ResumeLayout(false);
             this.panelPrompt.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1405,6 +1505,12 @@
         private HTAlt.WinForms.HTButton btnSeedLastUsed;
         private HTAlt.WinForms.HTButton btnSeedResetToRandom;
         private System.Windows.Forms.ContextMenuStrip menuStripLogs;
+        private System.Windows.Forms.TextBox QuickPromptAdd_Text;
+        private System.Windows.Forms.ListBox listBox1;
+        private HTAlt.WinForms.HTButton AddToLst_Btn;
+        private HTAlt.WinForms.HTButton RemoveFromLst_Btn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -40,6 +40,7 @@ namespace StableDiffusionGui
             CheckForIllegalCrossThreadCalls = false;
             Logger.Textbox = logBox;
             LoadUiElements();
+            LoadQuickList();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,7 +60,7 @@ namespace StableDiffusionGui
             {
                 string dir = Paths.GetExeDir();
 
-                if(dir.ToLower().Replace("\\", "/").MatchesWildcard("*/users/*/onedrive/*"))
+                if (dir.ToLower().Replace("\\", "/").MatchesWildcard("*/users/*/onedrive/*"))
                 {
                     UiUtils.ShowMessageBox($"Running this program out of the OneDrive folder is not supported. Please move it to a local drive and try again.", UiUtils.MessageType.Error, Nmkoder.Forms.MessageForm.FontSize.Big);
                     Application.Exit();
@@ -79,7 +80,7 @@ namespace StableDiffusionGui
             {
                 Logger.Log("Debugger is attached.");
             }
-            
+
             if (!InstallationStatus.IsInstalled)
             {
                 UiUtils.ShowMessageBox("No complete installation of the Stable Diffusion files was found.\n\nThe GUI will now open the installer.\nPlease press \"Install\" in the next window to install all required files.");
@@ -111,7 +112,7 @@ namespace StableDiffusionGui
             ConfigParser.SaveGuiElement(sliderInitStrength);
         }
 
-        public void RefreshAfterSettingsChanged ()
+        public void RefreshAfterSettingsChanged()
         {
             bool opt = Config.GetBool("checkboxOptimizedSd");
 
@@ -378,7 +379,7 @@ namespace StableDiffusionGui
             }
             else
             {
-                if(imgBoxOutput.Image != null)
+                if (imgBoxOutput.Image != null)
                 {
                     var bigPreviewForm = new BigPreviewForm();
                     bigPreviewForm.EnableTiling = checkboxSeamless.Checked;
@@ -429,7 +430,7 @@ namespace StableDiffusionGui
             UpdateInitImgAndEmbeddingUi();
         }
 
-        public void UpdateInitImgAndEmbeddingUi ()
+        public void UpdateInitImgAndEmbeddingUi()
         {
             if (!string.IsNullOrWhiteSpace(MainUi.CurrentInitImgPath) && !File.Exists(MainUi.CurrentInitImgPath))
             {
@@ -538,6 +539,100 @@ namespace StableDiffusionGui
             }
 
             new PostProcSettingsForm().ShowDialog();
+        }
+
+
+
+        void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = this.listBox1.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+
+                if (String.IsNullOrWhiteSpace(textboxPrompt.Text))
+                {
+                    textboxPrompt.Text = listBox1.SelectedItem.ToString();
+                }
+
+                else
+                {
+                    char last_char = textboxPrompt.Text[textboxPrompt.Text.Length - 1];
+                    if (last_char == Char.Parse(" ") || last_char == Char.Parse(","))
+                    {
+                        textboxPrompt.Text = textboxPrompt.Text + listBox1.SelectedItem.ToString();
+                    }
+                    else
+                        textboxPrompt.Text = textboxPrompt.Text + " " + listBox1.SelectedItem.ToString();
+                }
+
+
+            }
+        }
+
+        private void AddToLst_Btn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(QuickPromptAdd_Text.Text))
+            {
+
+                listBox1.Items.Add(QuickPromptAdd_Text.Text);
+                QuickPromptAdd_Text.Clear();
+                SaveQuickList();
+            }
+            else
+            {
+                Logger.Log("No Propmpt To Add");
+            }
+
+
+        }
+
+        private void RemoveFromLst_Btn_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                listBox1.SelectedIndex = -1;
+                SaveQuickList();
+            }
+            else
+            {
+                Logger.Log("No Propmpt To Remove");
+            }
+;
+        }
+
+        private void SaveQuickList()
+        {
+            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter("QuickPrompt.txt");
+            foreach (var item in listBox1.Items)
+            {
+                SaveFile.WriteLine(item.ToString());
+            }
+            SaveFile.Close();
+        }
+
+        private void LoadQuickList()
+        {
+            if (!File.Exists("QuickPrompt.txt"))
+            {
+                SaveQuickList();
+            }
+            else
+            {
+                List<string> lines = new List<string>();
+                using (StreamReader r = new StreamReader("QuickPrompt.txt"))
+                {
+                    string line;
+                    while ((line = r.ReadLine()) != null)
+                    {
+                        listBox1.Items.Add(line);
+                    }
+
+                }
+
+            }
+            
+
         }
     }
 }
